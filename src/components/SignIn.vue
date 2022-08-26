@@ -47,7 +47,7 @@
             </button>
           </div>
           <button class="button">Sign In</button>
-          <p>
+          <p class="signinlink">
             Don't have an account? Click
             <PersonalRouter
               :route="route"
@@ -152,6 +152,10 @@ background-color: #8f8d8d;
 }
 
 .header {
+  text-align: center;
+}
+
+.signinlink {
   text-align: center;
 }
 

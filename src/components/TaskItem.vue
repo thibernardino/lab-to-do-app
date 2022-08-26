@@ -3,7 +3,7 @@
 
     <div class="task-item" v-for="(task, index) in tasks" :key="index">
       <div class="task-image">
-          <i class="task fas fa-tasks fa-lg"></i>
+          <i class="task fas fa-solid fa-thumbtack"></i>
       </div>
 
       <div class="task-ctn">
@@ -55,22 +55,16 @@ const props = defineProps({
   tasks: Array,
 });
 
-//variables donde guardaremos las valores de nuestro formulario donde queremos cambiar los valores de title y
-//description 
 const name = ref('');
 const description = ref('');
 
-//variable que nos guarda un valor booleano para poder aplciar onClick y con la funcion changeNameActiveValue poder
-//cambiar su valor y abrir el formulario donde vamos a cambiar los valores
+//open the form to change the values insied
 const changeNameActive = ref(false);
 const idRef = ref(null);
 
-//pasamos index a la funcion, porque taskToToggle es un array de objetos y queremos obtener el objeto en el que hemos alterado el valor is_complete
-//para eso pasamos el index del v-for para obtener la posision de este objeto en el array y emitirlo como custom event a la home
 const setStatusTaskTask = (id, index) => {
 
-  //tenemos que comparar task.id porque cada tarea tiene su id individual y es lo que queremos comparar en el map para poder alterar el valor de is_complete
-  //is_complete es una variable del objeto task y lo que queremos es darle el valor opuesto a su valor inicial
+  //is_complete is a positive variable for then make the comparison
   const taskToToggle = props.tasks.map((task) =>
   task.id === id ? {...task, is_complete: !task.is_complete} : task
   );
@@ -128,6 +122,15 @@ const changeNameTask = (id, index) => {
   border: 7px solid #fff;
 }
 
+.ctn{
+  max-width: 1100px;
+  margin: auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+
 .task-ctn{
   padding: 30px;
   background-color: #fff;
@@ -135,7 +138,7 @@ const changeNameTask = (id, index) => {
   margin-right: 10px;
   margin-bottom: 40px;
   color: #303134;
-  border-radius: 10px;
+  border-radius: 50px;
 }
 
 .task-change-state{
@@ -176,12 +179,7 @@ const changeNameTask = (id, index) => {
   margin-bottom: 30px;
 }
 
-.ctn{
-  max-width: 1100px;
-  margin: auto;
-  display: flex;
-  flex-wrap: wrap;
-}
+
 
 .task{
   color: #fff;

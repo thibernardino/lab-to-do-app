@@ -56,7 +56,7 @@
             </button>
           </div>
           <button class="button" type="submit">Sign Up</button>
-          <p>
+          <p class="signuplink">
             Have an account? Click
             <PersonalRouter
               :route="route"
@@ -162,6 +162,10 @@ const signUp = async () => {
 }
 
 .header {
+  text-align: center;
+}
+
+.signuplink {
   text-align: center;
 }
 
