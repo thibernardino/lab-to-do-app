@@ -1,5 +1,5 @@
 <template>
-  <nav>
+  <nav class="nav">
     <div class="nav-bar">
       <router-link to="/">
         <img class="navbar-img" src="https://res.cloudinary.com/thibernar/image/upload/v1661379819/LogoTaskApp_gcrtyj.svg" alt="LogoTaskApp">

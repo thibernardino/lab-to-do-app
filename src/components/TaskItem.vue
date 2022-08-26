@@ -3,7 +3,7 @@
 
     <div class="task-item" v-for="(task, index) in tasks" :key="index">
       <div class="task-image">
-          <i class="task fas fa-solid fa-thumbtack"></i>
+          <i class="task fas fa-solid fa-thumbtack fa-spin"></i>
       </div>
 
       <div class="task-ctn">
@@ -16,7 +16,14 @@
         </div>
 
         <div class="task-buttons">
-          <div :class="task.is_complete ? 'task-change-state' : 'task-change-state-not'" @click="setStatusTaskTask(task.id, index)"></div>
+          <div :class="task.is_complete ? 'task-change-state' : 'task-change-state-not'" 
+          @click="setStatusTaskTask(task.id, index)">
+          </div>
+
+          <!--
+          <i :class="task.is_complete ? 'task-change-state' : 'task-change-state-not'" 
+           class="change fas fa-edit fa-lg" @click="setStatusTaskTask(task.id, index)">
+          </i>-->
 
           <div class="task-change-name">
             <i class="change fas fa-edit fa-lg" @click="changeNameActiveValue(task.id)"></i>
@@ -102,6 +109,8 @@ const changeNameTask = (id, index) => {
 
 <style scoped>
 
+
+
 .task-item{
   margin-top: 40px;
   height: 100%;
@@ -165,12 +174,6 @@ const changeNameTask = (id, index) => {
   background-color: #111111;
 }
 
-.task-buttons{
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-}
-
 .task-title{
   margin-bottom: 30px;
 }
@@ -179,13 +182,11 @@ const changeNameTask = (id, index) => {
   margin-bottom: 30px;
 }
 
-
-
 .task{
   color: #fff;
   position: absolute;
-  left: 50%;
-  top: 50%;
+  left: 40%;
+  top: 35%;
   transform: translate(-50%, -50%);
 }
 
@@ -212,6 +213,12 @@ const changeNameTask = (id, index) => {
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
+}
+
+.task-buttons{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
 }
 
 .changeName{

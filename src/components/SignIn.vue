@@ -26,7 +26,7 @@
             <input
               type="email"
               class="input-field"
-              placeholder="example@gmail.com"
+              placeholder="Your email for this class of things"
               id="email"
               v-model="email"
               required
@@ -37,7 +37,7 @@
             <input
               :type="passwordFieldType"
               class="input-field"
-              placeholder="**********"
+              placeholder="Your open sesame"
               id="password"
               v-model="password"
               required
